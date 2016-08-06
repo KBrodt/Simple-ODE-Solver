@@ -1,0 +1,130 @@
+
+RungeKutta4.cpp,196
+RungeKutta4::RungeKutta4(ODEProblem* eqdef) : ODESolver (eqdef) {}RungeKutta44,50
+void RungeKutta4::init() {init6,118
+void RungeKutta4::advance(vectorr64& v, r64& t, r64& dt) {advance13,292
+
+ODEProblem.cpp,188
+void ODEProblem::timeLoop() {timeLoop6,99
+void ODEProblem::scan() {scan17,293
+void ODEProblem::print(std::ostream& os) {print48,1044
+ODEProblem::~ODEProblem () {~ODEProblem64,1538
+
+Pb001.h,337
+class Pb001 : public ODEProblem {Pb0014,49
+  r64 _alpha, _a;_alpha6,95
+  r64 _alpha, _a;_a6,95
+  Pb001() {}Pb0018,122
+  virtual u32 size() { return 1; }size10,195
+void Pb001::equation(vectorr64& f, const vectorr64& y, r64 t) {equation15,294
+void Pb001::scan() {scan21,468
+void Pb001::print(std::ostream& os) {print31,778
+
+MenuSystem.h,43
+#define _MENUSYSTEM_H__MENUSYSTEM_H_2,23
+
+Oscillator.h,539
+class Oscillator : public ODEProblem {Oscillator4,49
+  r64 _c1, _c2, _c3, _c4, _omega;_c16,100
+  r64 _c1, _c2, _c3, _c4, _omega;_c26,100
+  r64 _c1, _c2, _c3, _c4, _omega;_c36,100
+  r64 _c1, _c2, _c3, _c4, _omega;_c46,100
+  r64 _c1, _c2, _c3, _c4, _omega;_omega6,100
+  Oscillator() {}Oscillator8,143
+  virtual u32 size() { return 2; }size10,221
+void Oscillator::equation(vectorr64& f, const vectorr64& y, r64 t) {equation15,320
+void Oscillator::scan() {scan20,512
+void Oscillator::print(std::ostream& os) {print33,951
+
+ODESolver_prm.cpp,50
+ODESolver* ODESolver_prm::create() {create6,102
+
+Init.cpp,101
+u32 cl_argc;cl_argc3,19
+char** cl_argv;cl_argv4,32
+void init(u32 argc, char* argv[]) {init9,89
+
+ODESolver_prm.h,160
+#define _ODESOLVER_PRM_H__ODESOLVER_PRM_H_2,26
+class ODESolver_prm {ODESolver_prm9,112
+  string method;method11,143
+  ODEProblem* problem;problem12,160
+
+RungeKutta4Adapt.cpp,221
+RungeKutta4Adapt::RungeKutta4Adapt(ODEProblem* eqdef) : ODESolver (eqdef) {}RungeKutta4Adapt5,79
+void RungeKutta4Adapt::init() {init7,157
+void RungeKutta4Adapt::advance(vectorr64& v, r64& t, r64& dt) {advance15,361
+
+ODESolver.h,223
+#define _ODESOLVER_H__ODESOLVER_H_2,22
+class ODESolver {ODESolver8,87
+  ODEProblem* _eqdef;_eqdef10,117
+  ODESolver(ODEProblem* eqdef) { _eqdef = eqdef; }ODESolver12,148
+  virtual ~ODESolver() {};~ODESolver13,199
+
+Typedefs.h,390
+#define _TYPEDEFS_H__TYPEDEFS_H_2,21
+typedef int i32;i326,66
+typedef unsigned u32;u327,83
+typedef double r64;r649,106
+typedef std::vector<r64> vectorr64;vectorr6411,127
+typedef std::vector<i32> vectori32;vectori3212,163
+typedef std::vector<u32> vectoru32;vectoru3213,199
+typedef std::string string;string15,236
+typedef std::istringstream istringstream;istringstream17,265
+
+main.cpp,45
+int main(int argc, char* argv[]) {main4,44
+
+ForwardEuler.cpp,200
+ForwardEuler::ForwardEuler(ODEProblem* eqdef) : ODESolver(eqdef) {}ForwardEuler4,51
+void ForwardEuler::init() {init6,120
+void ForwardEuler::advance(vectorr64& y, r64& t, r64& dt) {advance11,226
+
+Init.h,32
+#define _INIT_H__INIT_H_8,157
+
+RungeKutta4.h,389
+#define _RUNGEKUTTA4_H__RUNGEKUTTA4_H_2,24
+class RungeKutta4 : public ODESolver {RungeKutta46,73
+  vectorr64 _scratch1, _scratch2, _scratch3, _scratch4;_scratch17,112
+  vectorr64 _scratch1, _scratch2, _scratch3, _scratch4;_scratch27,112
+  vectorr64 _scratch1, _scratch2, _scratch3, _scratch4;_scratch37,112
+  vectorr64 _scratch1, _scratch2, _scratch3, _scratch4;_scratch47,112
+
+MenuSystem.cpp,427
+bool initFromCommandLine(const char* option, i32& number, i32 defaultvalue) {initFromCommandLine3,25
+bool initFromCommandLine(const char* option, u32& number, u32 defaultvalue) {initFromCommandLine15,308
+bool initFromCommandLine(const char* option, r64& number, r64 defaultvalue) {initFromCommandLine27,591
+bool initFromCommandLine(const char* option, string& name, const char* defaultvalue) {initFromCommandLine39,874
+
+ForwardEuler.h,144
+#define _FORWARDEULER_H__FORWARDEULER_H_2,25
+class ForwardEuler : public ODESolver {ForwardEuler6,75
+  vectorr64 _scratch1;_scratch17,115
+
+RungeKutta4Adapt.h,453
+#define _RUNGEKUTTA4ADAPT_H__RUNGEKUTTA4ADAPT_H_2,29
+class RungeKutta4Adapt : public ODESolver {RungeKutta4Adapt6,83
+  vectorr64 _scratch1, _scratch2, _scratch3, _scratch4;_scratch17,127
+  vectorr64 _scratch1, _scratch2, _scratch3, _scratch4;_scratch27,127
+  vectorr64 _scratch1, _scratch2, _scratch3, _scratch4;_scratch37,127
+  vectorr64 _scratch1, _scratch2, _scratch3, _scratch4;_scratch47,127
+  r64 _tol;_tol8,183
+  r64 _ec;_ec9,195
+
+Ext.h,30
+#define _EXT_H__EXT_H_8,171
+
+Includes.h,39
+#define _INCLUDES_H__INCLUDES_H_2,21
+
+ODEProblem.h,275
+#define _ODEPROBLEM_H__ODEPROBLEM_H_2,23
+class ODEProblem {ODEProblem8,88
+  ODESolver* _solver;_solver10,119
+  std::vector<vectorr64> _y;_y11,141
+  std::vector<r64> _t;_t12,170
+  r64 _dt, _T;_dt13,193
+  r64 _dt, _T;_T13,193
+  ODEProblem() {};ODEProblem15,217
